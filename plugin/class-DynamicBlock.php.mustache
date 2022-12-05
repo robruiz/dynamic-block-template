@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * Class for easily registering a dynamic Gutenberg block
+ *
+ */
+class DynamicBlock
+{
+	public $block_handle, $render, $attributes, $args;
+	public $block_namespace = '{{namespace}}';
+	function __construct($block_handle, $render, $attributes = array(), $args = array()){
+		$this->block_handle = $block_handle;
+		$this->render = $render;
+		$this->attributes = $attributes;
+		$this->args = $args;
+		$this->hooks();
+	}
+
+	function hooks(){
+		add_action('init', array($this, 'register_dynamic_block'));
+	}
+
+	function register_dynamic_block() {
+		$args = array(
+			'render_callback' 	=> $this->render,
+			'attributes'		=> $this->attributes
+		);
+
+		if(!empty($this->args)){
+			foreach($this->args as $arg_key => $arg_value) {
+				$args[$arg_key] = $arg_value;
+			}
+		}
+
+
+		register_block_type_from_metadata( plugin_dir_path(__FILE__).'/build', $args );
+	}
+
+}

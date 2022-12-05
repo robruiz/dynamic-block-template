@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       {{namespace}}
+ * Plugin Name:       {{title}}
 {{#description}}
  * Description:       {{description}}
 {{/description}}
@@ -21,20 +21,11 @@
  * @package           {{namespace}}
  */
 
-function {{namespaceSnakeCase}}_{{slugSnakeCase}}_block_init() {
+include_once('class-DynamicBlock.php');
 
-	register_block_type(
-		plugin_dir_path( __FILE__ ) . 'build',
-		array(
-			'render_callback' => '{{namespaceSnakeCase}}_{{slugSnakeCase}}_render_callback',
-		)
-	);
-}
-add_action( 'init', '{{namespaceSnakeCase}}_{{slugSnakeCase}}_block_init' );
+${{namespaceSnakeCase}} = new DynamicBlock('{{slugSnakeCase}}','{{namespaceSnakeCase}}_{{slugSnakeCase}}_render_callback');
 
-
-function {{namespaceSnakeCase}}_{{slugSnakeCase}}_render_callback( $atts, $content, $block) {
-	ob_start();
-	require plugin_dir_path( __FILE__ ) . 'build/template.php';
-	return ob_get_clean();
+function {{namespaceSnakeCase}}_{{slugSnakeCase}}_render_callback($attributes){
+	$html = '<div '.get_block_wrapper_attributes().'>'.esc_html_e( 'Dynamic Block Example', '{{textdomain}}' ).'</div>';
+    return $html;
 }

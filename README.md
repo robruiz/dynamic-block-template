@@ -4,7 +4,7 @@ This template will scaffold a plugin that is set up for registering dynamic bloc
 ## Usage
 Run the following in the terminal of your choice:
 
-`npx @wordpress/create-block example-plugin --template @ryanwelcher/dynamic-block-template`
+`npx @wordpress/create-block example-plugin --template @robruiz/dynamic-block-template`
 
 
 ## Structure
