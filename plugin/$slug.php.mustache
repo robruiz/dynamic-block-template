@@ -25,7 +25,7 @@ include_once('class-DynamicBlock.php');
 
 ${{namespaceSnakeCase}} = new {{slugPascalCase}}\DynamicBlock('{{slugSnakeCase}}','{{namespaceSnakeCase}}_{{slugSnakeCase}}_render_callback');
 
-function {{namespaceSnakeCase}}_{{slugSnakeCase}}_render_callback($attributes){
+function {{namespaceSnakeCase}}_{{slugSnakeCase}}_render_callback($attributes, $content, $block){
 	$html = '<div '.get_block_wrapper_attributes().'>'.esc_html( 'Dynamic Block Example', '{{textdomain}}' ).'</div>';
     return $html;
 }
