@@ -4,7 +4,7 @@ This template will scaffold a plugin that is set up for registering dynamic bloc
 ## Usage
 Run the following in the terminal of your choice:
 
-`npx @wordpress/create-block example-plugin --template @robruiz/dynamic-block-template`
+`npx @wordpress/create-block example-plugin --template @robcruiz/dynamic-block-template`
 
 
 ## Structure
@@ -23,6 +23,7 @@ Once the command has completed, the following structure will be created:
 .editorconfig
 .eslintrc
 .gitignore
+class-DynamicBlock.php
 {example-block}.php
 package.json
 package-lock.json

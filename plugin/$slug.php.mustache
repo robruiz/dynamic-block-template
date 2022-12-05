@@ -23,7 +23,7 @@
 
 include_once('class-DynamicBlock.php');
 
-${{namespaceSnakeCase}} = new DynamicBlock('{{slugSnakeCase}}','{{namespaceSnakeCase}}_{{slugSnakeCase}}_render_callback');
+${{namespaceSnakeCase}} = new {{slugPascalCase}}\\DynamicBlock('{{slugSnakeCase}}','{{namespaceSnakeCase}}_{{slugSnakeCase}}_render_callback');
 
 function {{namespaceSnakeCase}}_{{slugSnakeCase}}_render_callback($attributes){
 	$html = '<div '.get_block_wrapper_attributes().'>'.esc_html_e( 'Dynamic Block Example', '{{textdomain}}' ).'</div>';
